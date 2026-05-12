@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Next.js Dev Server",
+      "type": "pwa-node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Open Landing Page in Browser",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Install and Start Dev Server"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Start Next.js and Open Browser",
+      "configurations": [
+        "Launch Next.js Dev Server",
+        "Open Landing Page in Browser"
+      ]
+    }
+  ]
+}
